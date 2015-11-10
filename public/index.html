@@ -18,12 +18,14 @@
    
     <header class="Jumbotron text-center" style="background-color:FFFF99;">
       <h3>Make your selections below</h3>
+      <h4>Search by fruit name: <input type ="text" ng-model="fruitFilter.name"/> </h4>
+      <h4>Search by fruit price: <input type ="text" ng-model="fruitFilter.price"/> </h4>
     </header>
      
     <section >
      <div class="row">
-      <div class="ng-cloak col-md-4 thumbnail text-center" ng-repeat="fruit in grocery.fruit">
-        <img ng-src="/images/{{fruit.name}}.jpg" alt="{{fruit.name}}" style="width:100px;height:100px">
+      <div class="ng-cloak col-sm-3 thumbnail text-center" ng-repeat="fruit in grocery.fruit | filter:fruitFilter.name | filter:fruitFilter.price" >
+        <img ng-src="/images/{{fruit.name}}.jpg" alt="{{fruit.name}} data-toggle="tooltip" title="{{fruit.name}}"" style="width:100px;height:100px">
         <h4><span ng-bind="fruit.name"></span></h4>
         <h4>{{fruit.quantity}}, <span class="bold">${{fruit.price}}</span></h4>
         <button class="btn btn-primary" ng-click="grocery.add(fruit)">Add to cart</button>
@@ -39,11 +41,22 @@
     </header>
      
     <div class="panel panel-default">
-      <section class="panel-body">
+      <section class="panel-body panel-primary">
         <div class=" text-center" ng-repeat="fruit in grocery.cart">
-          <h4><span>{{fruit.name}}, count: {{fruit.count}}</span></h4>
+          <h4>
+          	<img ng-src="/images/{{fruit.name}}.jpg" alt="{{fruit.name}}" style="width:50px;height:50px">
+          	<span>Quantity: {{fruit.quantity}} X {{fruit.count}}</span>
+          	<button class="btn btn-primary " ng-click="grocery.increase(fruit)"><span class="glyphicon glyphicon-plus"></span></button>
+          	<button class="btn btn-primary" ng-click="grocery.decrease(fruit)"><span class="glyphicon glyphicon-minus"></span></button>
+          </h4>
       </div>
+        <span class="bold">---------------------------------------------------------</span>
+		</br>
+        <span class="bold">Total Price: {{grocery.checkoutPrice | currency}}<span>
         
+        <br>
+        </br>
+        <button class="btn btn-primary" ng-click="grocery.checkout()">Checkout</button>
       </section>
       
     </div>
