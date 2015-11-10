@@ -14,12 +14,13 @@
    
   .menu{
       float:left;
-      width:69%;
+      width:65%;
+
   }
    
   .cart{
-       float:left;
-       width:31%;
+       float:right;
+       width:28%;
        background-color: beige;
   }
    
@@ -32,4 +33,9 @@
   .row {
       margin-right: 0;
       margin-left: 0;
+  }
+
+  body{
+    padding-left: 50px;
+    padding-right: 50px;
   }
