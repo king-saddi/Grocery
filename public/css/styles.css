@@ -1,35 +1,35 @@
-/*
-* We place the Angular cloaking styles outside of Angular so we don't see curly braces, etc. whle we are waiting for Angular to load
-*/
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
-    .ng-cloak, .x-ng-cloak {
-  display: none !important;
-}
- 
-h2.title {
-  padding: 0 1em;
-}
-.recipe {padding-left: 30px;}
-.new {background-image: url("../images/new.gif"); background-repeat: no-repeat;}
- 
-.menu{
-                float:left;
-                width:69%;
-}
- 
-.cart{
-                float:left;
-                width:31%;
-                background-color: beige;
-}
- 
-.jumbotron{
-                margin-bottom: 0px;
-                padding-top: 25px;
-    padding-bottom: 20px;
-}
- 
-.row {
-    margin-right: 0;
-    margin-left: 0;
-}
+  /*
+  * We place the Angular cloaking styles outside of Angular so we don't see curly braces, etc. whle we are waiting for Angular to load
+  */
+  [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+      .ng-cloak, .x-ng-cloak {
+    display: none !important;
+  }
+   
+  h2.title {
+    padding: 0 1em;
+  }
+  .recipe {padding-left: 30px;}
+  .new {background-image: url("../images/new.gif"); background-repeat: no-repeat;}
+   
+  .menu{
+      float:left;
+      width:69%;
+  }
+   
+  .cart{
+       float:left;
+       width:31%;
+       background-color: beige;
+  }
+   
+  .jumbotron{
+      margin-bottom: 0px;
+      padding-top: 25px;
+      padding-bottom: 20px;
+  }
+   
+  .row {
+      margin-right: 0;
+      margin-left: 0;
+  }

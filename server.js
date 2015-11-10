@@ -4,7 +4,7 @@ var serveStatic = require('serve-static')
 
 var app = express()
 app.use(morgan('combined'))
-var port = 3000;
+var port = 8080;
 app.use(serveStatic(__dirname + '/public'))
 
 app.set('port', process.env.PORT || port)
